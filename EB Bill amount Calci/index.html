@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>EB Bill amount Calci</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>EB Bill amount Calci</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="Enter the no of units">
+        </div>
+    <div>
+    <button type="submit" onclick="EBcal()">Calculate</button>
+</div>
+<div id="result">
+
+</div>
+</div>
+<script>
+    //     Ex Qn:
+        // EB bill amount calculator
+
+        // For first 50 units Rs. 0.75/unit
+        // For next 100 units Rs. 1.00/unit
+        // For next 100 units Rs. 1.30/unit
+        // For unit above 250 Rs. 1.50/unit
+        // Input - 75
+        // Output - 62.5
+    function EBcal(){
+        let unit = Number(document.getElementById("input").value)
+        
+       if (unit <= 50)   
+            rate = unit*0.75
+        else if (unit>=50 && unit<=100)
+            rate = (unit-50)*1 + (50*0.75)
+        else if (unit>=100 && unit<=250)
+            rate = (unit-100)*1.30 + (50*0.75)+(50*1)    
+        else if (unit> 250)
+            rate = (unit-250)*1.50 + (195)+ (37.5)+(50)
+        else
+            rate = 0
+
+            let results = document.getElementById("result")
+        result.innerHTML = "your charges for the " + unit + "is " + rate
+
+    }
+
+
+   
+</script>
+
+
+
+    
+    
+</body>
+</html>

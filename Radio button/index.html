@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Educational Qualification</title>
+</head>
+<body>
+
+<form id="qualificationForm">
+  <label>
+    <input type="radio" name="qualification" value="Illiterate"> Illiterate
+  </label><br>
+  <label>
+    <input type="radio" name="qualification" value="HighSchool"> High School
+  </label><br>
+  <label>
+    <input type="radio" name="qualification" value="UG"> Undergraduate (UG)
+  </label><br>
+  <label>
+    <input type="radio" name="qualification" value="PG"> Postgraduate (PG)
+  </label><br>
+  <label>
+    <input type="radio" name="qualification" value="Doctorate"> Doctorate
+  </label><br>
+
+  <button type="button" onclick="checkEligibility()">Check Eligibility</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+  function checkEligibility() {
+    var qualification = document.querySelector('input[name="qualification"]:checked').value;
+    var resultElement = document.getElementById('result');
+
+    switch (qualification) {
+      case 'Illiterate':
+        resultElement.textContent = "Not eligible for the job.";
+        break;
+      case 'HighSchool':
+      case 'UG':
+        resultElement.textContent = "Eligible for the job.";
+        break;
+      case 'PG':
+      case 'Doctorate':
+        resultElement.textContent = "Not eligible for the job.";
+        break;
+      default:
+        resultElement.textContent = "Please select a qualification.";
+    }
+  }
+</script>
+
+</body>
+</html>

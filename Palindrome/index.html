@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    <script>
+    //    Qs:
+    //     Build a palindrome checker
+    //     Input - 'Was it a car or a cat I saw?'
+    //     Result - palindrome
+
+    //     Input - 'how are you'
+
+    //     Result - Not a palindrome
+
+function isPalindrome(str) {
+    // Remove non-alphanumeric characters and convert to lowercase
+    const cleanedStr = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+    // Check if the string is equal to its reverse
+    return cleanedStr === cleanedStr.split('').reverse().join('');
+}
+
+// Test the function
+const inputString1 = "Was it a car or a cat I saw?";
+const inputString2 = "how are you";
+
+if (isPalindrome(inputString1)) {
+    console.log("Palindrome");
+} else {
+    console.log("Not a Palindrome");
+}
+
+if (isPalindrome(inputString2)) {
+    console.log("Palindrome");
+} else {
+    console.log("Not a Palindrome");
+}
+
+// Qs:
+    //     Build a palindrome checker
+      //     Input - 'madam'
+    //     Result - palindrome
+
+    //     Input - 'what'
+    //     Result - Not a palindrome
+
+// function isPalindrome(str){
+//     const cleanedStr = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+//     return cleanedStr === cleanedStr.split('').reverse().join('')
+// }
+
+// const inputString1 = "Madam";
+//  const inputString2 = "what";
+
+// if (isPalindrome(inputString1)) {
+//     console.log("Palindrome");
+// } else {
+//     console.log("Not a Palindrome");
+//  }
+
+//  if (isPalindrome(inputString2)) {
+//    console.log("Palindrome");
+//  } else {
+//     console.log("Not a Palindrome");
+// }
+    </script>
+</body>
+</html>
+   
